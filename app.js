@@ -22,6 +22,7 @@
   const finishError = $("#finishError");
   const smokingDetails = $("#smokingDetails");
   const toast = $("#toast");
+  const seniorToggle = $("#seniorToggle");
 
   const stepMeta = [
     { label: "基本信息", note: "预计还需 4 分钟" },
@@ -34,6 +35,28 @@
   let currentStep = 0;
   let latestResult = null;
   let toastTimer = null;
+
+  function syncSeniorMode(enabled, updateAddress = true) {
+    document.documentElement.classList.toggle("senior-mode", enabled);
+    seniorToggle.setAttribute("aria-pressed", String(enabled));
+    seniorToggle.setAttribute(
+      "title",
+      enabled ? "切换回普通版" : "切换为中老年大字简单版"
+    );
+    seniorToggle.querySelector("span:last-child").textContent = enabled
+      ? "普通版"
+      : "大字版";
+
+    if (!updateAddress) return;
+    const address = new URL(window.location.href);
+    if (enabled) {
+      address.searchParams.set("mode", "senior");
+    } else {
+      address.searchParams.delete("mode");
+    }
+    address.hash = "";
+    window.history.replaceState({}, "", address);
+  }
 
   function showView(name) {
     Object.entries(views).forEach(([key, view]) => {
@@ -972,6 +995,20 @@
       .slice(0, 5)
       .map((tag) => `<span>${tag}</span>`)
       .join("");
+    $("#seniorTopActions").innerHTML = `
+      <strong>先做这三件事</strong>
+      ${actions
+        .slice(0, 3)
+        .map(
+          (action, index) => `
+            <div class="senior-top-action">
+              <span>${index + 1}</span>
+              <div>${action.title}</div>
+            </div>
+          `
+        )
+        .join("")}
+    `;
 
     renderFactors(factors);
     renderCheckupCards(checkupCards);
@@ -1151,6 +1188,9 @@
   $("#restartButton").addEventListener("click", resetAssessment);
   $("#printButton").addEventListener("click", () => window.print());
   $("#copyButton").addEventListener("click", copySiteAddress);
+  seniorToggle.addEventListener("click", () => {
+    syncSeniorMode(!document.documentElement.classList.contains("senior-mode"));
+  });
 
   form.addEventListener("submit", (event) => event.preventDefault());
 
@@ -1195,6 +1235,7 @@
   });
 
   $("#footerYear").textContent = new Date().getFullYear();
+  syncSeniorMode(document.documentElement.classList.contains("senior-mode"), false);
   Object.values(views).forEach((view) => {
     if (!view.classList.contains("is-active")) view.setAttribute("aria-hidden", "true");
   });
