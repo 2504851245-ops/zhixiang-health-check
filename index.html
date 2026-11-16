@@ -13,6 +13,13 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2317392f'/%3E%3Cpath d='M14 34c8-2 12-8 14-18 2 10 6 16 12 18-6 2-10 8-12 17-2-9-6-15-14-17Z' fill='none' stroke='%23ddf1e4' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E"
     />
+    <script>
+      try {
+        if (new URLSearchParams(window.location.search).get("mode") === "senior") {
+          document.documentElement.classList.add("senior-mode");
+        }
+      } catch (error) {}
+    </script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -39,11 +46,25 @@
         <a href="#principles">使用说明</a>
         <a href="#sources">参考依据</a>
       </nav>
-      <div class="privacy-pill">
-        <svg viewBox="0 0 20 20" aria-hidden="true">
-          <path d="M5.5 8V6a4.5 4.5 0 0 1 9 0v2M4 8h12v9H4z" />
-        </svg>
-        答案不离开本机
+      <div class="header-tools">
+        <button
+          class="senior-toggle"
+          id="seniorToggle"
+          type="button"
+          aria-pressed="false"
+          title="切换为中老年大字简单版"
+        >
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2.5 7.5S5 3.5 10 3.5s7.5 4 7.5 4-2.5 4-7.5 4-7.5-4-7.5-4ZM10 5.5v4M10 12c-2 0-3 2-3 4.5M10 12c2 0 3 2 3 4.5" />
+          </svg>
+          <span>大字版</span>
+        </button>
+        <div class="privacy-pill">
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M5.5 8V6a4.5 4.5 0 0 1 9 0v2M4 8h12v9H4z" />
+          </svg>
+          答案不离开本机
+        </div>
       </div>
     </header>
 
@@ -62,6 +83,17 @@
             <p class="hero-lead reveal reveal-delay-2">
               不预测疾病，也不替你下诊断。用几个简单问题，整理值得关注的健康线索，生成一份可以带去和医生沟通的体检清单。
             </p>
+            <div class="senior-welcome" aria-label="中老年版使用说明">
+              <strong>大字版：一步一步来，不着急</strong>
+              <p>
+                一共 5 步。每页只回答几个问题，不确定时可以选“不清楚”，也能随时返回修改。最后会给出一份可以直接给医生看的体检清单。
+              </p>
+              <div>
+                <span>字更大</span>
+                <span>一次只看一页</span>
+                <span>答案不上传</span>
+              </div>
+            </div>
             <div class="hero-actions reveal reveal-delay-3">
               <button class="button button-primary button-large" type="button" id="startButton">
                 开始健康自查
@@ -693,6 +725,7 @@
               <h1 id="resultTitle">把注意力放在<br />真正重要的地方。</h1>
               <p id="resultSummary" class="result-summary"></p>
               <div class="result-tags" id="resultTags"></div>
+              <div class="senior-top-actions" id="seniorTopActions"></div>
             </div>
             <div class="attention-card">
               <div class="attention-gauge" id="attentionGauge">
