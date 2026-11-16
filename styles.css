@@ -3488,7 +3488,7 @@ html.senior-mode .field-note {
   gap: 9px;
   margin-top: 17px;
   color: #5e756d;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.75;
 }
 
@@ -3533,7 +3533,7 @@ html.senior-mode .choice-copy strong {
 
 html.senior-mode .choice-copy small {
   margin-top: 4px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 html.senior-mode .compact-choice-list {
@@ -3563,7 +3563,7 @@ html.senior-mode .check-row strong {
 
 html.senior-mode .check-row small {
   margin-top: 4px;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.55;
 }
 
@@ -3590,7 +3590,7 @@ html.senior-mode .danger-heading h2 {
 }
 
 html.senior-mode .danger-heading p {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 html.senior-mode .symptom-grid {
@@ -3638,7 +3638,7 @@ html.senior-mode .screening-note-icon {
 }
 
 html.senior-mode .screening-note p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.8;
 }
 
@@ -3895,7 +3895,7 @@ html.senior-mode .checkup-card h3 {
 }
 
 html.senior-mode .checkup-card-head p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.6;
 }
 
@@ -3922,7 +3922,7 @@ html.senior-mode .checkup-item strong {
 html.senior-mode .checkup-item p {
   margin-top: 5px;
   color: #4d665e;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.75;
 }
 
@@ -3960,7 +3960,7 @@ html.senior-mode .action-item strong {
 html.senior-mode .action-item p {
   margin-top: 4px;
   color: #4f665f;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7;
 }
 
@@ -4044,7 +4044,7 @@ html.senior-mode .result-disclaimer {
 
 html.senior-mode .result-disclaimer p {
   color: #4b635b;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 html.senior-mode .result-disclaimer strong {
@@ -4114,7 +4114,7 @@ html.senior-mode .method-note {
   }
 
   html.senior-mode .hero-lead {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   html.senior-mode .senior-welcome {
@@ -4126,7 +4126,7 @@ html.senior-mode .method-note {
   }
 
   html.senior-mode .senior-welcome > p {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   html.senior-mode .hero-actions {
@@ -4156,7 +4156,7 @@ html.senior-mode .method-note {
   }
 
   html.senior-mode .question-intro > p {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   html.senior-mode .check-row {
@@ -4166,7 +4166,7 @@ html.senior-mode .method-note {
   }
 
   html.senior-mode .check-row small {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   html.senior-mode .quiz-actions {
@@ -4194,7 +4194,7 @@ html.senior-mode .method-note {
   }
 
   html.senior-mode .result-summary {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   html.senior-mode .attention-card {
