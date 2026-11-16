@@ -2,6 +2,13 @@
 
 一个无需安装、无需后端、可直接在浏览器中使用的个性化健康自查与体检沟通工具。
 
+## 在线访问
+
+- 普通版：https://2504851245-ops.github.io/zhixiang-health-check/
+- 中老年大字版：https://2504851245-ops.github.io/zhixiang-health-check/senior.html
+
+中老年版使用至少 18px 的正文、单列大按钮、高对比度布局，并在结果页最上方直接列出最重要的三步行动。普通版右上角也可以随时切换“大字版”和“普通版”。
+
 ## 直接使用
 
 双击 `index.html`，或将它拖入 Safari、Chrome、Edge 等现代浏览器。手机使用时，建议把整个文件夹放到静态网站服务中，再通过网址访问。
@@ -10,12 +17,12 @@
 
 ## 发布给家人朋友
 
-这是纯静态网站，只需要上传 `index.html`、`styles.css` 和 `app.js`。
+这是纯静态网站，只需要上传 `index.html`、`senior.html`、`styles.css` 和 `app.js`。
 
 ### 方法一：GitHub Pages
 
 1. 在 GitHub 新建一个公开仓库。
-2. 上传本文件夹中的 `index.html`、`styles.css`、`app.js`。
+2. 上传本文件夹中的 `index.html`、`senior.html`、`styles.css`、`app.js`。
 3. 打开仓库 `Settings` → `Pages`。
 4. 在 `Build and deployment` 中选择 `Deploy from a branch`。
 5. 分支选择 `main`，目录选择 `/ (root)`，保存。
